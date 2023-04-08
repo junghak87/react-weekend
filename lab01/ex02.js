@@ -13,9 +13,9 @@ console.log(result);
 
 let x = 10;
 
-if (x > 0) {
+if (num1 > 0) {
   console.log("양수");
-} else if (x < 0) {
+} else if (num1 < 0) {
   console.log("음수");
 } else {
   console.log("0");
@@ -89,6 +89,7 @@ do {
 } while (j > 5);
 
 // 반복문에서 break, continue 차이
+// break
 for (let k = 0; k < 5; k++) {
   if (k === 3) break; // 가장 가까운 반복문을 종료
   console.log(k);
@@ -96,6 +97,6 @@ for (let k = 0; k < 5; k++) {
 
 // continue
 for (let k = 0; k < 5; k++) {
-  if (k === 3) continue; // 가장 가까운 반복문을 종료
+  if (k === 3) continue; // 이후 문장을 무시하고 다음 iteration 진행
   console.log(k);
 }
