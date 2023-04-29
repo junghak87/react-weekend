@@ -4,6 +4,11 @@ import MyComponent from "./components/MyComponent";
 import MyComponent2 from "./components/MyComponent2";
 import MyComponent3 from "./components/MyComponent3";
 import MyComponent4 from "./components/MyComponent4";
+import MyState from "./components/MyState";
+import MyState2 from "./components/MyState2";
+import MyEvent from "./components/MyEvent";
+import MyEvent2 from "./components/MyEvent2";
+import MyEvent3 from "./components/MyEvent3";
 
 // props : properties. 부모 컴퍼넌트에서 자식 컴퍼넌트로 데이터를 전달 할 때 사용
 // props 를 전달 할 때 부모 컴퍼넌트에서는 xml의 속성(attribute) 값으로 설정
@@ -13,10 +18,18 @@ import MyComponent4 from "./components/MyComponent4";
 // 전달 받는 컴포넌트에서 노드를 전달 받을 때는 children 속성 값으로 전달 됨.
 
 function App() {
-  const test = "super 테스트";
-
   return (
     <>
+      <MyEvent3></MyEvent3>
+      <hr></hr>
+      <MyEvent2></MyEvent2>
+      <hr></hr>
+      <MyEvent></MyEvent>
+      <hr></hr>
+      <MyState2></MyState2>
+      <hr></hr>
+      <MyState></MyState>
+      <hr></hr>
       <MyComponent name="홍길동" />
       <hr></hr>
       <MyComponent2 age={20}>
