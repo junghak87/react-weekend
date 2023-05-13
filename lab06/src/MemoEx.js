@@ -17,7 +17,7 @@ const MemoEx = () => {
   // useMemo를 이용해서
   //   const average = getAverage(list);
 
-  //   useMemo(() => first, [second]) , second가 변경될때만 사용
+  //   useMemo(() => first, [second]) , second(의존성 목록에 속한 내용)가 변경될때만 사용
   const average = useMemo(() => getAverage(list), [list]);
 
   const onChange = (e) => setNumber(e.target.value);

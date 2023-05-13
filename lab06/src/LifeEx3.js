@@ -10,15 +10,19 @@ const LifeEx3 = () => {
   // useEffect  함수를 호출하면 effect 콜백 함수가 1번 실행됨.
   // 의존성 배열의 원소 값이 변결될 때마다 콜백 함수가 실행됨.
   // LifeCycle componentDidMount , componentWillUnmount 의 함수 기능을 수행
-  useEffect(() => {
-    console.log("render");
-    const id = setInterval(() => setNow(new Date()), 1000);
+  useEffect(
+    () => {
+      console.log("render");
+      const id = setInterval(() => setNow(new Date()), 1000);
 
-    //useEffect가 리턴하는 콜백은 Component가 unmount 될 때 호출 됨 componentWillUnmount)
-    return () => {
-      clearInterval(id);
-    };
-  }, []);
+      //useEffect가 리턴하는 콜백은 Component가 unmount 될 때 호출 됨 componentWillUnmount)
+      // 작업할게 없다면 null 값을 return 처리
+      return () => {
+        clearInterval(id);
+      };
+    } /* effect */,
+    [] /* dependencies */,
+  );
 
   return (
     <>

@@ -4,6 +4,7 @@ import LifeEx from "./LifeEx.js";
 import LifeEx2 from "./LifeEx2.js";
 import LifeEx3 from "./LifeEx3.js";
 import MemoEx from "./MemoEx";
+import CallBackEx from "./CallBackEx";
 
 function App() {
   const [color, setColor] = useState("#000000");
@@ -14,12 +15,14 @@ function App() {
 
   return (
     <div className="App">
+      <CallBackEx />
+      <hr />
       <MemoEx />
       <hr />
       <LifeEx3 />
-      <hr></hr>
+      <hr />
       <LifeEx2 />
-      <hr></hr>
+      <hr />
       <h1>Lifecycle Method</h1>
       <button onClick={makeRandomColor}>임의색상</button>
       <LifeEx color={color} />
