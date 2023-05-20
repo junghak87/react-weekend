@@ -7,21 +7,23 @@ const Details = (props) => {
   const { movieId } = useParams();
   console.log("movieId = " + movieId);
 
+  const [loading, setLoading] = useState(true);
   const [movie, setMovie] = useState({});
 
+  // useEffect가 없으면 계속 호출이 발생된다.
   useEffect(() => {
     const fetchData = async () => {
-      // 응답이 올때까지 await 에서 기다렸다가 아래 코드를 실행
       try {
-        const response = await axios.get(
+        const {
+          data: {
+            data: { movie },
+          },
+        } = await axios.get(
           "https://yts.mx/api/v2/movie_details.json?movie_id=" + movieId,
         );
 
-        console.log(response.data);
-
-        setMovie(response.data.data.movie);
-        console.log("movie id :" + movieId);
-        console.log("movie :" + movie);
+        setMovie(movie);
+        setLoading(false);
       } catch (error) {
         console.log(error);
         if (error.response) console.log(error.response.status);
@@ -34,11 +36,17 @@ const Details = (props) => {
   return (
     <div>
       <h1>Movie Details</h1>
-      <img src={movie.background_image} />
-      <h5>{movie.title}</h5>
-      <h5>{movie.year}</h5>
-      <h5>{movie.like_count}</h5>
-      <h5>{movie.url}</h5>
+      {loading ? (
+        "loading..."
+      ) : (
+        <div>
+          <img src={movie.background_image} />
+          <h5>{movie.title}</h5>
+          <h5>{movie.year}</h5>
+          <h5>{movie.like_count}</h5>
+          <h5>{movie.url}</h5>
+        </div>
+      )}
     </div>
   );
 };
