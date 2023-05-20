@@ -10,7 +10,7 @@ import {
 
 // Todo Item
 const TodoListItem = ({ todo, onRemove, onToggle }) => {
-  const { id, text, checked } = todo;
+  const { id, checked } = todo;
 
   return (
     <div className="TodoListItem">
