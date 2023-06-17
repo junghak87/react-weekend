@@ -2,12 +2,13 @@ const Comment = ({ comment }) => {
   const { name, email, body } = comment;
 
   return (
-    <article>
+    <aside className="comment">
       <h3>{name}</h3>
       <p>{email}</p>
       <p>{body}</p>
-    </article>
+    </aside>
   );
+  // test
 };
 
 export default Comment;
